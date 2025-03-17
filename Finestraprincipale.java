@@ -1,11 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
-public class Finestraprincipale extends JFrame{
 
-    private Navbar n = new Navbar();
-    private Toolbar t = new Toolbar();
+public class Finestraprincipale extends JFrame {
+
+    private final Navbar n = new Navbar();
+    private final Toolbar t = new Toolbar();
+
+    private final Color tc = new Color(42, 46, 57);
+    private final Color mc = new Color(46, 52, 64);
     
-    public Finestraprincipale(){
+    public Finestraprincipale() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setSize(screenSize.width - 250,screenSize.height - 150);
         setLocationRelativeTo(null);
@@ -20,7 +24,7 @@ public class Finestraprincipale extends JFrame{
         cont.setLayout(new BorderLayout());
         
         
-        nb.setBackground(Color.YELLOW);
+        nb.setBackground(mc);
         cont.add(nb, BorderLayout.NORTH);
         nb.setLayout(new BorderLayout());
         nb.add(n, BorderLayout.WEST);
@@ -28,11 +32,15 @@ public class Finestraprincipale extends JFrame{
         cont.add(tb, BorderLayout.SOUTH);
         tb.setLayout(new BorderLayout());
         tb.add(t,BorderLayout.WEST);
-        tb.setBackground(Color.BLACK);
+        tb.setBackground(tc);
+
+        Field field = new Field();
+        add(field, BorderLayout.CENTER);
+
         setVisible(true);
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         new Finestraprincipale();
     }
 }
